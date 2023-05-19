@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins:wght@500&display=swap');
+
+:root {
+    --background: black;
+    --middleround: rgb(17, 62, 17);
+    --insert-background: rgb(50 205 50 / 10%);
+    --foreround: limegreen;
+    --placeholder: rgb(255 255 255 / 80%);
+    --input-text: white;
+    --btn-text: black;
+    --btn-text-disabled: white;
+    --task-hover: rgb(41, 170, 41);
+    --trash-hover: red;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: var(--foreround);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.selectable {
+    user-select: text;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-container {
+    width: 95%;
+    max-width: 800px;
+    height: 95%;
+    background-image: linear-gradient(141deg, transparent, var(--middleround));
+    display: flex;
+    flex-direction: column;
+    border: solid 5px var(--foreround);
+    border-radius: 10px;
+}
+
+.insert-content {
+    width: 100%;
+    max-height: 80px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-name-input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: var(--input-text);
+    border-bottom: solid 3px var(--foreround);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.add-task-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--btn-text);
+    background-color: var(--foreround);
+    transition: all 300ms ease;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.add-task-btn:disabled {
+    cursor: not-allowed;
+    color: var(--btn-text-disabled);
+    background-color: var(--middleround);
+}
+
+.add-task-btn:active  {
+    transform: scale(1.1);
+}
+
+.tasks {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.task {
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--foreround);
+    flex: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 300ms ease;
+}
+
+.task:hover {
+    padding: 10px 15px;
+    background-color: var(--task-hover);
+}
+
+.task-text {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    word-break: break-word;
+}
+
+.task-completed {
+    text-decoration: line-through;
+}
+
+.icon-trash {
+    width: 32px;
+    height: 32px;
+    fill: var(--middleround);
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.icon-trash:hover {
+    fill: var(--trash-hover);
+}
+
+.icon-trash:active {
+    transform: scale(1.1);
+}
